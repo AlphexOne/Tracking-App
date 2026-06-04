@@ -26,6 +26,9 @@
 !*/.github/workflows/
 !*/.github/nichtVerwendeteWorkflows/
 !*/.vscode/
+!*/assets/concets/
+!*/assets/favicons/
+!*/assets/images/
 
 ##############################################
 # Ausnahme: diese Dateien NICHT ignorieren
@@ -45,6 +48,11 @@
 !/.github/workflows/release.yml
 !/.github/PULL_REQUEST_TEMPLATE.md
 !/.vscode/settings.json
+!/assets/concepts/Footer.jpg
+!/assets/favicons/apple-touch-icon.png
+!/assets/favicons/CounterApp-32x32.png
+!/assets/favicons/favicon.png
+!/assets/images/logo.png
 !/.gitattributes
 !/.gitignore
 !/app.js
