@@ -2,7 +2,7 @@
 
 [![Open Issues](https://img.shields.io/badge/Github-Issues-red?logo=github)](https://github.com/AlphexOne/Counter-App/issues)
 [![Pages Deployment](https://github.com/AlphexOne/Counter-App/actions/workflows/deploy.yml/badge.svg)](https://alphexone.github.io/Counter-App/)
-[![Release workflow](https://github.com/AlphexOne/Counter-App/actions/workflows/release.yml/badge.svg)](https://github.com/AlphexOne/Counter-App/releases)
+[![Release](https://github.com/AlphexOne/Counter-App/actions/workflows/release.yml/badge.svg)](https://github.com/AlphexOne/Counter-App/releases)
 [![GitHub release](https://img.shields.io/github/v/release/AlphexOne/Counter-App)](https://github.com/AlphexOne/Counter-App/releases)
 
 ---
