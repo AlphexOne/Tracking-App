@@ -1,8 +1,8 @@
 # Counter-App
 
-[![Open Issues](https://img.shields.io/badge/Gitea-Issues-red?logo=gitea)](http://192.168.0.38:3020/AlphexOne/Counter-App/issues/new/choose)
-[![Pages Deployment](http://192.168.0.38:3020/AlphexOne/Counter-App/actions/workflows/gitea-deploy.yml/badge.svg)](http://192.168.0.38:8090/AlphexOne/Counter-App/)
-![Release](http://192.168.0.38:3020/AlphexOne/Counter-App/actions/workflows/release.yml/badge.svg)
+[![Open Issues](https://img.shields.io/badge/Github-Issues-red?logo=github)](https://github.com/AlphexOne/Counter-App/issues)
+[![Pages Deployment](https://github.com/AlphexOne/Counter-App/blob/main/.github/workflows/deploy.yml/badge.svg)](https://alphexone.github.io/Counter-App/)
+<!-- ![Release](http://192.168.0.38:3020/AlphexOne/Counter-App/actions/workflows/release.yml/badge.svg) -->
 
 ---
 
