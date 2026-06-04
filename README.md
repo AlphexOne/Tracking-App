@@ -1,206 +1,95 @@
 # Counter-App
 
-<!-- [![Gitea](https://img.shields.io/badge/Gitea-609926?logo=gitea&logoColor=white)](https://about.gitea.com/)
-[![Open Issues](https://img.shields.io/badge/GitHub-Issues-red?logo=github)](https://github.com/sonnytricky/TEMPLATES/issues/new)
-[![Lint Workflow](https://github.com/sonnytricky/TEMPLATE/actions/workflows/lint.yml/badge.svg)](https://github.com/sonnytricky/TEMPLATE/actions/workflows/lint.yml) -->
+[![Open Issues](https://img.shields.io/badge/Gitea-Issues-red?logo=gitea)](http://192.168.0.38:3020/AlphexOne/Counter-App/issues/new/choose)
+[![Pages Deployment](http://192.168.0.38:3020/AlphexOne/Counter-App/actions/workflows/gitea-deploy.yml/badge.svg)](http://192.168.0.38:8090/AlphexOne/Counter-App/)
+![Release](http://192.168.0.38:3020/AlphexOne/Counter-App/actions/workflows/release.yml/badge.svg)
 
+---
 
-
-<!-- <p align="center">
-  <img src=".images/example.png"
+<p align="center">
+  <img src="assets/images/logo.png"
        alt="Ein Bild"
        width=""
        height="150">
 </p>
 
---- -->
+---
 
-<!-- # 📦 Beispiel Repository Struktur
+# 📱 Counter-App (iOS-Style Web App)
+
+Eine elegante, minimalistische und voll funktionsfähige Zähler-App im modernen iOS-Design (Dark Mode). 
+Diese Web-App wurde speziell für die Nutzung auf Smartphones optimiert, bietet jedoch auch eine vollständig simulierte iPhone-Ansicht auf Desktop-Bildschirmen.
+
+---
+
+## ✨ Features
+
+- **Dynamischer Counter-View:** Der Name des aktuell geöffneten Zählers wird direkt im fixierten Header angezeigt. 
+
+- **Intelligentes Kontextmenü:** Über ein Drei-Punkte-Symbol (`...`) an jeder Kachel öffnet sich ein Kontextmenü zum bearbeiten.
+
+- **Automatischer Täglicher Reset:** In den Einstellungen kann für jeden Counter individuell ein automatischer Reset um **00:00 Uhr Mitternacht** aktiviert werden. 
+
+- **Interaktiver Info-Tooltip:** Ein elegantes CSS-Info-Icon (`i`) in den Einstellungen erklärt beim Drüberfahren (Hover/Touch) sofort die genaue Funktionsweise des täglichen Resets.
+
+- **Echte Mobile-Optimierung:**
+  - Nutzt moderne `100dvh`-Einheiten (Dynamic Viewport Height), um unschönes Scrollen des gesamten Smartphone-Browsers zu verhindern.
+  - Vollständige Integration der **Safe Area** (iOS Home-Bar), sodass der Footer nahtlos mit der Unterkante des Displays abschließt.
+  - Der Scrollbalken ist auf mobilen Geräten unsichtbar für einen extrem cleanen, nativen App-Look.
+
+  - **Zoom-Schutz:** Schnelles, mehrfaches Tippen auf das Plus- oder Minus-Symbol führt nicht mehr zu einem ungewollten Browser-Zoom (*Double-Tap-to-Zoom* deaktiviert via `touch-action: manipulation`).
+
+- **Persistente Speicherung:** Alle Zählerstände, Namen und Zeitstempel werden im `localStorage` deines Browsers gesichert. Beim nächsten Start öffnet die App automatisch den zuletzt genutzten Counter.
+
+
+---
+
+
+## 🛠️ Technologien
+
+- **HTML5:** Semantische Strukturierung der Views.
+- **CSS3:** Moderner Dark Mode (Apple-Core-Farbpalette), Custom-Scrollbars, flexibles Flexbox-Layout und reines CSS-Hover-Handling für Tooltips.
+- **Vanilla JavaScript (ES6):** Dynamisches Rendering der Kacheln, LocalStorage-Anbindung, Datumsvergleiche für den Mitternachts-Reset und Positionsberechnungen für UI-Elemente.
+- **FontAwesome:** Hochwertige Vektor-Icons für Navigation und Steuerung.
+
+
+---
+
+
+## 📂 Projektstruktur
+
+```text
+├── index.html       # Struktur der App (Main-View, Counter-View, Settings-View)
+├── style.css        # Komplette UI-Stylings, iOS-Simulator & responsive Handy-Anpassungen
+└── app.js           # App-Logik, Event-Handling, Reset-Funktionen & Speicherverwaltung
 
 ```
-repo-template/
-│
-├─ .github/
-│  ├─ ISSUE_TEMPLATE/
-│  │  ├─ bug_report.md
-│  │  ├─ feature_request.md
-│  │  ├─ idea.md
-│  │  └─ task.md
-│  ├─ workflows/
-│  └─ PULL_REQUEST_TEMPLATE.md
-│
-├─ .gitignore
-├─ .gitattributes
-│
-├─ README.md
-├─ LICENSE
-├─ CONTRIBUTING.md
-├─ CODE_OF_CONDUCT.md
-├─ SECURITY.md
-├─ CHANGELOG.md
-│
-├─ docs/
-├─ src/
-└─ tests/
-```
+
 
 ---
 
-# .gitignore 
-```gitignore
-Siehe .gitignore
-```
+
+## 🚀 Installation & Start
+
+Da die App vollständig in nativem Webcode geschrieben ist, benötigst du **keine Installation** oder Build-Tools.
+
+1. Lade die drei Projektdateien (`index.html`, `style.css`, `app.js`) in denselben Ordner herunter.
+2. Öffne die Datei `index.html` per Doppelklick in einem beliebigen modernen Webbrowser.
+3. *Handy-Tipp:* Lade die Dateien auf einen Webserver hoch (oder nutze den VS Code Live Server), öffne sie auf dem Smartphone und wähle „Zum Home-Bildschirm hinzufügen“, um das Gefühl einer nativen App zu bekommen.
+
 
 ---
 
-# .gitattributes
 
-```gitattributes
-Siehe .gitattributes
-```
+## ⚙️ Funktionsweise des täglichen Resets
+
+Das System vergleicht beim Öffnen eines Counters den aktuellen Kalendertag mit dem gespeicherten Datum der letzten Aktualisierung (`updatedAt`). Sobald ein neuer Tag anbricht (**nach 00:00 Uhr Mitternacht**) und der Zähler das erste Mal aufgerufen wird, springt der Wert automatisch auf `0`. Die Prüfung erfolgt ressourcenschonend direkt im Browser.
+
 
 ---
 
-# README.md
 
-```markdown
-# Projektname
-
-Kurze Beschreibung des Projekts.
-
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Installation
-
-
-git clone https://github.com/sonnytricky/TEMPLATES.git
-cd projekt
-
-
-## Nutzung
-
-Beschreibung wie das Projekt verwendet wird.
-
-## Entwicklung
-
-### Voraussetzungen
-
-* Git
-* Sprache/Runtime
-
-### Setup
-
-make setup
-
-## Contributing
-
-Bitte Issues und Pull Requests verwenden.
-
-## Lizenz
-
-Siehe LICENSE Datei.
-
----
-
-# Issue Template – Bug Report
-
-`.github/ISSUE_TEMPLATE/bug_report.md`
-
-```yaml
----
-name: Bug Report
-about: Fehler melden
-labels: bug
-assignees: ''
----
-# Beschreibung
-
-Kurze Beschreibung des Fehlers.
-
-# Schritte zum Reproduzieren
-
-1. ...
-2. ...
-3. ...
-
-# Erwartetes Verhalten
-
-Was sollte passieren?
-
-# Screenshots / Logs
-
-Falls vorhanden.
-
-# Umgebung
-
-- OS:
-- Version:
-```
-
----
-
-# Issue Template – Feature Request
-
-`.github/ISSUE_TEMPLATE/feature_request.md`
-
-```yaml
----
-name: Feature Request
-about: Neue Funktion vorschlagen
-labels: features
-assignees: ''
----
-# Beschreibung der Idee
-
-Beschreibe die neue Funktion.
-
-# Problem
-
-Welches Problem löst das?
-
-# Lösungsvorschlag
-
-Wie könnte die Funktion aussehen?
-
-# Alternativen
-
-Andere mögliche Lösungen.
-```
-
----
-
-# Pull Request Template
-
-`.github/PULL_REQUEST_TEMPLATE.md`
-
-```markdown
-## Beschreibung
-
-Was wurde geändert?
-
-## Änderungen
-
-- Änderung 1
-- Änderung 2
-
-## Tests
-
-Wie wurde getestet?
-
-## Checklist
-
-- [ ] Code getestet
-- [ ] Dokumentation aktualisiert
-- [ ] Keine Breaking Changes
-``` -->
-
----
-
-# LICENSE
+## 📜 Lizenz
 
 Copyright (C) 2026 AlphexOne
 
