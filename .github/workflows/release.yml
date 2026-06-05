@@ -89,7 +89,7 @@ jobs:
       # 6️⃣ Archive bauen
       - name: Create archive
         run: |
-          tar -czf zensical-release-${{ env.NEXT_VERSION }}.tar.gz -C .release_temp .
+          tar -czf release-${{ env.NEXT_VERSION }}.tar.gz -C .release_temp .
 
       # 7️⃣ Tag erstellen (WICHTIG: verhindert doppelte Releases)
       - name: Create Git tag
@@ -97,13 +97,13 @@ jobs:
           git tag v${{ env.NEXT_VERSION }}
           git push origin v${{ env.NEXT_VERSION }}
 
-      # 8️⃣ GitHub Release erstellen (EINHEITLICH)
+      # 8️⃣ GitHub Release erstellen (EINHEITLICH) ACHTUNG: Name ändern
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
           tag: v${{ env.NEXT_VERSION }}
-          name: Release v${{ env.NEXT_VERSION }}
-          artifacts: zensical-release-${{ env.NEXT_VERSION }}.tar.gz
+          name: Counter-App v${{ env.NEXT_VERSION }}
+          artifacts: release-${{ env.NEXT_VERSION }}.tar.gz
 
           generateReleaseNotes: true
           draft: false
