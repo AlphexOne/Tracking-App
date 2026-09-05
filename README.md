@@ -6,8 +6,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/AlphexOne/Counter-App)](https://github.com/AlphexOne/Counter-App/releases)
 
 ---
-Test
----
 
 <p align="center">
   <img src="assets/images/logo.png"
